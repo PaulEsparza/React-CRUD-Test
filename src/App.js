@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CreateTask from './components/CreateTask';
 import ReadTasks from './components/ReadTasks';
 
 function App() {
@@ -9,13 +10,20 @@ function App() {
     { id: 3, responsable: "Ejemplo3", description: "Ejemplo3"}
   ]);
 
+  const addTask = (task) => {
+    task.id = tasks.length + 1;
+    setTasks([
+      ...tasks,
+      task])
+  }
+
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-4">
-          <h1>HOla</h1>
+        <div className="col-md-4 mt-5">
+          <CreateTask addTask = {addTask}/>
         </div>
-        <div className="col-md-8">
+        <div className="col-md-8 mt-5">
           <ReadTasks tasks = {tasks}/>
         </div>
       </div>
