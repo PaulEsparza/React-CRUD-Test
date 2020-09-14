@@ -17,6 +17,10 @@ function App() {
       task])
   }
 
+  const deleteTask = (id) => {
+
+  }
+
   return (
     <div className="container">
       <div className="row">
@@ -24,7 +28,7 @@ function App() {
           <CreateTask addTask = {addTask}/>
         </div>
         <div className="col-md-8 mt-5">
-          <ReadTasks tasks = {tasks}/>
+          <ReadTasks tasks = {tasks} deleteTask = {deleteTask}/>
         </div>
       </div>
       
