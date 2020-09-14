@@ -1,6 +1,11 @@
 import React from 'react';
 
 function ReadTasks(props) {
+
+    const deleteTask = (id) => {
+        props.deleteTask(id);
+    }
+
     return (  
         <div className="container">
             <table className="table table-hover">
@@ -21,7 +26,7 @@ function ReadTasks(props) {
                         <td>{task.description }</td>
                         <td>
                             <button className="btn btn-warning">Edit</button>
-                            <button className="btn btn-danger">Delete</button>
+                            <button className="btn btn-danger" onClick={() => deleteTask(task.id)}>Delete</button>
                         </td>
                     </tr>
                     ) : (
