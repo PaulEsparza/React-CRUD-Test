@@ -4,8 +4,6 @@ import { useForm } from 'react-hook-form';
 
 function EditTask(props) {
 
-    console.log(props.currentTask);
-
     const {register, errors, handleSubmit, setValue} = useForm({
         defaultValues: props.currentTask
     });
