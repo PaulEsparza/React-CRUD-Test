@@ -6,6 +6,10 @@ function ReadTasks(props) {
         props.deleteTask(id);
     }
 
+    const editTask = (task) => {
+        props.editTask(task);
+    }
+
     return (  
         <div className="container">
             <table className="table table-hover">
@@ -25,7 +29,7 @@ function ReadTasks(props) {
                         <td>{task.responsable }</td>
                         <td>{task.description }</td>
                         <td>
-                            <button className="btn btn-warning">Edit</button>
+                            <button className="btn btn-warning" onClick={() => editTask(task)}>Edit</button>
                             <button className="btn btn-danger" onClick={() => deleteTask(task.id)}>Delete</button>
                         </td>
                     </tr>
